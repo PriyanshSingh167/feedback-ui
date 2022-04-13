@@ -1,0 +1,42 @@
+{
+  "workbench.colorTheme": "Material Theme Ocean High Contrast",
+  "editor.mouseWheelZoom": true,
+  "code-runner.runInTerminal": true,
+  "update.enableWindowsBackgroundUpdates": false,
+  "extensions.autoCheckUpdates": false,
+  "tabnine.experimentalAutoImports": true,
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "code-runner.clearPreviousOutput": true,
+  "editor.renderControlCharacters": true,
+  "explorer.confirmDelete": false,
+  "notebook.lineNumbers": "on",
+  "liveServer.settings.donotVerifyTags": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "window.menuBarVisibility": "compact",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "java.jdt.ls.home": "c:\\Program Files\\Eclipse Adoptium\\jdk-17.0.1.12-hotspot",
+  "git.autofetch": true,
+  "bracketPairColorizer.depreciation-notice": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "editor.fontSize": 16,
+  "breadcrumbs.enabled": false,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "workbench.iconTheme": "vscode-icons",
+  "terminal.external.windowsExec": "C:\\Program Files\\Git",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.tabSize": 2,
+  "python.defaultInterpreterPath": "C:\\Python\\Python39\\python.exe",
+  "html.format.contentUnformatted": "",
+  "emmet.showSuggestionsAsSnippets": true,
+  "files.associations": {
+    "*.md": "markdown"
+  },
+  "emmet.includeLanguages": {
+    "javascript ": " javascriptreact"
+  },
+}
