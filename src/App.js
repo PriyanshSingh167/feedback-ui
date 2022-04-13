@@ -1,13 +1,13 @@
 import React from "react";
 import Header from "./components/Header";
-import FeedBack from "./components/FeedBack";
+import FeedBackList from "./components/FeedBackList";
 
 const App = () => {
   return (
     <>
       <Header text="FeedBack UI" />
       <div className="container">
-        <FeedBack />
+        <FeedBackList />
       </div>
     </>
   );

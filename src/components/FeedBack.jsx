@@ -1,19 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
+import Card from "./shared/Card";
 
-function FeedBack() {
-  const [rating, setRating] = useState(7);
-  const [text, setText] = useState("Example of feedback item");
-  const handleClick = () => {
-    setRating((prev) => {
-      return prev + 1;
-    });
-  };
+function FeedBack({ item }) {
   return (
-    <div className="card">
-      <div className="num-display">{rating}</div>
-      <div className="text-display">{text}</div>
-      <button onClick={handleClick}>Click</button>
-    </div>
+    <Card reverse={true}>
+      <div className="num-display">{item.rating}</div>
+      <div className="text-display">{item.text}</div>
+    </Card>
   );
 }
 
