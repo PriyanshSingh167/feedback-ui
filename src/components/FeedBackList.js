@@ -1,61 +1,48 @@
-import React, { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
-
 import { motion, AnimatePresence } from "framer-motion";
-import FeedbackData from "../data/FeedBackData";
-import FeedBack from "./FeedBack";
-import FeedbackStats from "./FeedbackStats";
-import FeedbackForm from "./FeedbackForm";
-import AboutPage from "./pages/AboutPage";
+import PropTypes from "prop-types";
+import FeedbackItem from "./FeedBackItem";
 
-function FeedBackList() {
-  const [feedback, setfeedBack] = useState(FeedbackData);
+function FeedbackList({ feedback, handleDelete }) {
   if (!feedback || feedback.length === 0) {
-    return <p>"No feedback yet. "</p>;
+    return <p>No Feedback Yet</p>;
   }
-  const deleteItem = (id) => {
-    if (window.confirm("Are you sure, you want to delete?")) {
-      setfeedBack(feedback.filter((item) => item.id !== id));
-    }
-  };
-
-  const addFeedback = (newFeedback) => {
-    newFeedback.id = uuidv4();
-    setfeedBack([newFeedback, ...feedback]);
-  };
-
   return (
-    <div className="container">
-      <FeedbackForm handleAdd={addFeedback} />
-      <FeedbackStats feedback={feedback} />
-      <div className="feedback-list">
-        <AnimatePresence>
-          {feedback.map((item) => (
-            <motion.div
+    <div className="feedback-list">
+      <AnimatePresence>
+        {feedback.map((item) => (
+          <motion.div
+            key={item.id}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <FeedbackItem
               key={item.id}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            >
-              <FeedBack key={item.id} item={item} handleDelete={deleteItem} />
-            </motion.div>
-          ))}
-        </AnimatePresence>
-        <AboutPage />
-      </div>
+              item={item}
+              handleDelete={handleDelete}
+            />
+          </motion.div>
+        ))}
+      </AnimatePresence>
     </div>
   );
+
   // return (
-  //   <div className="container">
-  //     <FeedbackForm handleAdd={addFeedback} />
-  //     <FeedbackStats feedback={feedback} />
-  //     <div className="feedback-list">
-  //       {feedback.map((item) => (
-  //         <FeedBack key={item.id} item={item} handleDelete={deleteItem} />
-  //       ))}
-  //     </div>
+  //   <div className='feedback-list'>
+  //     {feedback.map((item) => (
+  //       <FeedbackItem key={item.id} item={item} handleDelete={handleDelete} />
+  //     ))}
   //   </div>
-  // );
+  // )
 }
 
-export default FeedBackList;
+FeedbackList.propTypes = {
+  feedback: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      text: PropTypes.string.isRequired,
+      rating: PropTypes.number.isRequired,
+    })
+  ),
+};
+export default FeedbackList;

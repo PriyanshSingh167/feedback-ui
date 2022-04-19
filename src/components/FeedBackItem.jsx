@@ -2,7 +2,7 @@ import React from "react";
 import Card from "./shared/Card";
 import PropTypes from "prop-types";
 import CancelIcon from "@mui/icons-material/Cancel";
-function FeedBack({ item, handleDelete }) {
+function FeedbackItem({ item, handleDelete }) {
   return (
     <Card reverse={false}>
       <div className="num-display">{item.rating}</div>
@@ -14,8 +14,8 @@ function FeedBack({ item, handleDelete }) {
   );
 }
 
-FeedBack.propTypes = {
+FeedbackItem.propTypes = {
   item: PropTypes.object.isRequired,
 };
 
-export default FeedBack;
+export default FeedbackItem;
