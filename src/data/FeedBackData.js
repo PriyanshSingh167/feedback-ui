@@ -1,19 +1,19 @@
-const FeedbackData = [
+const FeedBackData = [
   {
     id: 1,
     rating: 10,
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur vel vitae commodi alias voluptatem est voluptatum ipsa quae.",
+    text: "I am item 1 hello there",
   },
   {
     id: 2,
     rating: 9,
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur vel vitae commodi alias voluptatem est voluptatum ipsa quae.",
+    text: "I am item 2 and it's goodbye",
   },
   {
     id: 3,
     rating: 8,
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur vel vitae commodi alias voluptatem est voluptatum ipsa quae.",
+    text: "consequuntur vel vitae commodi alias voluptatem est voluptatum ipsa quae.",
   },
 ];
 
-export default FeedbackData;
+export default FeedBackData;
